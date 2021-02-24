@@ -34,5 +34,8 @@ for imperare in caudex:
 
 
 if (len(argv) > 1):
-	for sarcina in argv[1:]:
-		via('apt-get install --yes --fix-missing --fix-broken --install-recommends {}'.format(sarcina))
+    for sarcina in argv[1:]:
+        via('apt-get install --yes --fix-missing --fix-broken --install-recommends {}'.format(sarcina))
+else:
+    pass
+
