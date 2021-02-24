@@ -1,0 +1,52 @@
+#!/usr/bin/python3
+
+
+from os import system
+from sys import argv
+from time import sleep
+
+
+ambactus = [
+    'hkps://hkps.pool.sks-keyservers.net',
+    'hkps://keys.openpgp.org',
+    'hkps://pgp.mit.edu',
+    'hkps://keyring.debian.org',
+    'hkps://keyserver.ubuntu.com',
+    'hkps://attester.flowcrypt.com/',
+    'hkps://zimmermann.mayfirst.org/',
+    'hkp://pool.sks-keyservers.net:80',
+    'hkp://keyserver.ubuntu.com:80',
+    'hkp://keys.openpgp.org',
+    'hkp://pgp.mit.edu',
+    'hkp://keyring.debian.org',
+    'hkp://keyserver.ubuntu.com',
+    'hkp://attester.flowcrypt.com/',
+    'hkp://zimmermann.mayfirst.org/',]
+
+
+def nuntius_clavis(introitus):
+    print('→ Clavis: {}'.format(introitus))
+
+
+def nuntius_ambactus(introitus):
+    print('→ Ambactus: {}'.format(introitus))
+
+
+def addendi_clavis(clavem):
+    for tessera in ambactus:
+        print('')
+        nuntius_ambactus(tessera)
+        system('sudo apt-key adv --keyserver {} --recv-keys {}'.format(tessera, clavem))
+        system('sudo gpg --keyserver {} --recv {}'.format(tessera, clavem))
+        system('sudo gpg --export --armor {} | sudo apt-key add -'.format(clavem))
+
+
+def ultima_scriptor(clavem):
+    addendi_clavis(clavem)
+
+
+if (len(argv) > 1):
+    for finalis_clavis in argv[1:]:
+        print('')
+        nuntius_clavis(finalis_clavis)
+        ultima_scriptor(finalis_clavis)

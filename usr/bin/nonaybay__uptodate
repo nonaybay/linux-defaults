@@ -1,0 +1,38 @@
+#!/usr/bin/python3
+
+
+from os import system
+from sys import argv
+from time import sleep
+
+
+caudex = [
+    'apt-get update',
+    'apt-get install --yes --fix-missing --fix-broken',
+    'apt-get upgrade --yes',
+    'apt-get full-upgrade --yes',
+    'apt-get dist-upgrade --yes',
+    'apt-get autoremove --yes',
+    'apt-get clean --yes']
+
+
+def nuntius(introitus):
+    print('→ Facere...')
+    print('→ sudo {}'.format(introitus))
+    print('')
+
+
+def via(introitus):
+    system('clear')
+    sleep(1)
+    nuntius(introitus)
+    system('sudo {}'.format(introitus))
+
+
+for imperare in caudex:
+    via(imperare)
+
+
+if (len(argv) > 1):
+	for sarcina in argv[1:]:
+		via('apt-get install --yes --fix-missing --fix-broken --install-recommends {}'.format(sarcina))
