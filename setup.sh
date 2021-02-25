@@ -15,3 +15,6 @@ fi
 
 yes | cp -firv etc usr /
 fc-cache -vf
+
+vim +PluginInstall +qall
+vim +PluginUpdate +qall

@@ -1,2 +1,5 @@
-source /etc/vim/alter/vundle.vim
-source /etc/vim/alter/python.vim
+" Mandatory
+source /etc/vim/alter/V/vundle
+
+" P
+source /etc/vim/alter/P/python
