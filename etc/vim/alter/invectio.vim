@@ -1,5 +1,10 @@
-" Mandatory
+" Requiratur
 source /etc/vim/alter/V/vundle
 
-" P
+" Alii
+
+
+"
+"   P
+"
 source /etc/vim/alter/P/python
