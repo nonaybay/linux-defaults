@@ -1,7 +1,3 @@
 runtime! debian.vim
 
-source /etc/vim/basic.vim
-source /etc/vim/extended.vim
-source /etc/vim/filetypes.vim
-
-source /etc/vim/alter/invectio.vim
+source /etc/vim/currere_imperium/modulus/invectio.vim
